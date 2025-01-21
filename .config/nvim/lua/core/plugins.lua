@@ -16,22 +16,25 @@ return require('packer').startup(function(use)
   -- User defined plugins
   -- Themes and colors
   use 'ellisonleao/gruvbox.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
-  -- Filemanagement
+  -- Navigation
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+  use 'christoomey/vim-tmux-navigator'
   -- Code/text Highlightning
-  use 'nvim-treesitter/nvim-treesitter'
+  ---use 'nvim-treesitter/nvim-treesitter'
   -- Fuzzy finder for nvim
   use {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.4',
+    tag = '0.1.8',
     requires = {{'nvim-lua/plenary.nvim'}}
   }
   -- LSP
+  --[[
   use {
-    "williamboman/mason.nvim",
+    --"williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig"
   }
@@ -41,6 +44,7 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
+  ]]--
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

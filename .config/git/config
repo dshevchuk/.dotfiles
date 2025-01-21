@@ -1,0 +1,19 @@
+[user]
+	name = username_will_be_here
+	email = username@users.noreply.github.com
+[core]
+	excludesfile = $XDG_CONFIG_HOME/git/ignore
+	editor = $EDITOR
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+#[commit]
+#	template = "${XDG_CONFIG_HOME}/git/stCommitMsg"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
